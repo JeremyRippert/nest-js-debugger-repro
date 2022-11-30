@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run start:debug:docker
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - '8000:3000'
+      - '9229:9229'
